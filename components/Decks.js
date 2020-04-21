@@ -3,7 +3,7 @@ import DeckList from './DeckList'
 import { createStackNavigator  } from '@react-navigation/stack'
 import DeckDetails from './DeckDetails'
 import AddQuestion from './AddQuestion'
-import StartQuiz from './StartQuiz'
+import Quiz from './Quiz'
 
 const Stack = createStackNavigator()
 
@@ -14,7 +14,7 @@ class Decks extends Component {
         <Stack.Screen name="Decks" component={DeckList} />
         <Stack.Screen name="Details" component={DeckDetails} />
         <Stack.Screen name="AddQuestion" component={AddQuestion} />
-        <Stack.Screen name="StartQuiz" component={StartQuiz} />
+        <Stack.Screen name="Quiz" component={Quiz} />
       </Stack.Navigator>
     )
   }

@@ -13,12 +13,12 @@ class DeckDetails extends Component {
         <Text style={styles.textStyle}>{deck.questions.length !== undefined ? deck.questions.length : 0} cards in deck</Text>
         <Button
           title="Start Quiz"
-          onPress={() => this.props.navigation.navigate('StartQuiz')}
-
+          onPress={() => this.props.navigation.navigate('Quiz', { deck: deck, position: 0, score: 0 })}
+          disabled={deck.questions !== undefined && deck.questions.length > 0 ? false : true}
         />
         <Button 
           title="Add Question"
-          onPress={() => this.props.navigation.navigate('AddQuestion')}
+          onPress={() => this.props.navigation.navigate('AddQuestion', { title: deck.title })}
         />
       </View>
     )
