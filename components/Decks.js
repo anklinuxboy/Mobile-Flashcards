@@ -1,28 +1,17 @@
 import React, { Component } from 'react'
-import { Text, View, FlatList } from 'react-native';
-import { getDecks } from '../utils/api'
-import Deck from './Deck'
+import DeckList from './DeckList'
+import { createStackNavigator  } from '@react-navigation/stack'
+import DeckDetails from './DeckDetails'
+
+const Stack = createStackNavigator()
 
 class Decks extends Component {
-  state = {
-    decks: {}
-  }
-
-  componentDidMount() {
-    getDecks()
-      .then(results => this.setState({ decks: results}))
-  }
-
   render() {
-    const { decks } = this.state
-
     return (
-      <View>
-        <FlatList
-          data={Object.keys(decks)}
-          renderItem={({ item }) => <Deck deck={decks[item]} />}
-        />
-      </View>
+      <Stack.Navigator>
+        <Stack.Screen name="Decks" component={DeckList} />
+        <Stack.Screen name="Details" component={DeckDetails} />
+      </Stack.Navigator>
     )
   }
 }

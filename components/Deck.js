@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 class Deck extends Component {
   render() {
@@ -8,7 +8,10 @@ class Deck extends Component {
     const title = deck.title
     const questions = deck.questions !== undefined ? deck.questions.length : 0
     return (
-      <TouchableOpacity style={styles.deck}>
+      <TouchableOpacity 
+        style={styles.deck} 
+        onPress={() => this.props.navigation.navigate('Details', { deck })}
+      >
         <Text style={{ fontSize: 30}}>{title}</Text>
         <Text style={{ fontSize: 20}}>{questions} questions in deck</Text>
       </TouchableOpacity>
