@@ -13,9 +13,12 @@ class DeckDetails extends Component {
         <Text style={styles.textStyle}>{deck.questions.length !== undefined ? deck.questions.length : 0} cards in deck</Text>
         <Button
           title="Start Quiz"
+          onPress={() => this.props.navigation.navigate('StartQuiz')}
+
         />
         <Button 
           title="Add Question"
+          onPress={() => this.props.navigation.navigate('AddQuestion')}
         />
       </View>
     )

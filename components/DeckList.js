@@ -9,6 +9,10 @@ class DeckList extends Component {
   }
 
   componentDidMount() {
+    this.loadQuestions()
+  }
+
+  loadQuestions = () => {
     getDecks()
       .then(results => this.setState({ decks: results}))
   }
