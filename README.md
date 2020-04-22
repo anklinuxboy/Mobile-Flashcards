@@ -9,6 +9,8 @@ To install the dependencies, please run
 
 `pod install`
 
+`cd ..`
+
 `yarn ios`
 
 This will start the ios emulator with the app. You should see the app asking for permission to show local notifications. Every day at 8 pm, if the user hasn't answered one quiz, the app will show a reminder notification.
