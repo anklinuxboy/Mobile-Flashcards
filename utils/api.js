@@ -6,7 +6,13 @@ const DECKS_KEY = 'MobileFlashcards:decks2'
 export function submitDeck(entry, key) {
   return AsyncStorage.mergeItem(DECKS_KEY, JSON.stringify({
     [key]: entry
-  }))
+  })).then((result) => {
+    return AsyncStorage.getItem(DECKS_KEY)
+      .then(formatResults)
+      .then(results => {
+        return results[key]
+      })
+  })
 }
 
 export function submitQuestion(deckTitle, question, answer) {

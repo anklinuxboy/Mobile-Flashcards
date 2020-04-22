@@ -20,7 +20,7 @@ class AddDeck extends Component {
           questions: []
         }
       , title)
-        .then(() => navigation.navigate('Decks'))
+        .then((deck) => navigation.navigate('Details', { deck }))
     }
 
     this.setState({ title: '' })
