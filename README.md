@@ -13,4 +13,6 @@ This will start the ios emulator with the app. You should see the app asking for
 Functionality:
 * Create a Deck
 * Add Questions
-* 
+* See Results
+* Use the app as a flashcard app
+* Restart Quiz
