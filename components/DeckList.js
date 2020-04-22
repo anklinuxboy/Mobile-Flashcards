@@ -9,7 +9,14 @@ class DeckList extends Component {
   }
 
   componentDidMount() {
-    this.loadQuestions()
+    const { navigation } = this.props
+    this.focusListener = navigation.addListener('didFocus', () => {
+      this.loadQuestions()
+    })
+  }
+
+  componentWillUnmount() {
+    this.focusListener.remove()
   }
 
   loadQuestions = () => {

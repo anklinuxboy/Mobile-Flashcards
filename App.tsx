@@ -3,15 +3,22 @@ import { NavigationContainer } from '@react-navigation/native'
 import React from 'react';
 import { StyleSheet, View, Platform, StatusBar } from 'react-native';
 import Home from './components/Home.js';
+import { setLocalNotification } from './utils/helpers.js';
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <Home />
-      </View>
-    </NavigationContainer>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
+
+  render() {
+    return (
+      <NavigationContainer>
+        <View style={styles.container}>
+          <Home />
+        </View>
+      </NavigationContainer>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -21,3 +28,5 @@ const styles = StyleSheet.create({
     paddingTop: 32,
   },
 });
+
+export default App

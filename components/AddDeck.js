@@ -22,6 +22,8 @@ class AddDeck extends Component {
       , title)
         .then(() => navigation.navigate('Decks'))
     }
+
+    this.setState({ title: '' })
   }
 
   render() {
