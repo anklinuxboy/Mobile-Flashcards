@@ -10,7 +10,7 @@ class DeckList extends Component {
 
   componentDidMount() {
     this.loadQuestions()
-    
+
     this.unsubscribe = this.props.navigation.addListener('focus', () => {
       this.loadQuestions()
     })
@@ -33,6 +33,7 @@ class DeckList extends Component {
         <FlatList
           data={Object.keys(decks)}
           renderItem={({ item }) => <Deck deck={decks[item]} navigation={this.props.navigation}/>}
+          listKey={(item) => item}
         />
       </View>
     )
